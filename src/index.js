@@ -8,11 +8,13 @@ const API_KEY = "cdbc0f1323ad7ab8d46eeb3d29215fe1";
 const weather = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loaded, setLoaded] = useState(false);
+  const [cityName, setCityName] = useState("Paris");
 
   // add a function to fetch the weather data
   const fetchWeather = async (cityname) => {
     try {
       setLoaded(false);
+      setCityName(cityname);
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${API_KEY}&units=metric`);
       if (response.status == 200) {
         const data = await response.json();
@@ -28,7 +30,7 @@ const weather = () => {
 
   // remember my city name
   useEffect(() => {
-    fetchWeather("Paris");
+    fetchWeather(cityName);
   }, []);
 
   // if the data is not loaded, show loading message
@@ -38,7 +40,7 @@ const weather = () => {
         <View style={styles.header}>
           <Text style={styles.headerTitle}>ECV Weather app</Text>
         </View>
-        <Text style={styles.more}>Loading...</Text>
+        <Text style={styles.more}>Loading {cityName} data...</Text>
       </View>
     );
   } else if (weatherData == null) {
@@ -48,7 +50,7 @@ const weather = () => {
           <Text style={styles.headerTitle}>ECV Weather app</Text>
         </View>
         <WeatherSearch fetchWeatherData={fetchWeather} />
-        <Text style={styles.more}>City not found</Text>
+        <Text style={styles.more}> {cityName} not found</Text>
       </View>
     );
   }
