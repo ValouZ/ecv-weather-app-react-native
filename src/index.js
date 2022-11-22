@@ -40,7 +40,7 @@ const weather = () => {
         <View style={styles.header}>
           <Text style={styles.headerTitle}>ECV Weather app</Text>
         </View>
-        <Text style={styles.more}>Loading {cityName} data...</Text>
+        <Text style={styles.more}>Loading {cityName}'s data...</Text>
       </View>
     );
   } else if (weatherData == null) {
