@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 42,
     fontWeight: "bold",
-    color: "",
+    color: "#FFFFFF",
     marginTop: 10,
   },
   logo: {
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   },
   info: {
     width: Dimensions.get("window").width / 2.5,
-    backgroundColor: "#ABCBFC",
+    backgroundColor: "#E5B9FF",
     padding: 10,
     borderRadius: 10,
     justifyContent: "space-around",
@@ -112,10 +112,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 24,
     fontWeight: "bold",
+    color: "white"
   },
   infoText: {
     textAlign: "center",
     fontSize: 18,
     fontStyle: "italic",
+    color: "white"
+
   },
 });

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Alert } from "react-native";
+import { View, Text, StyleSheet, Alert, Image } from "react-native";
 import React, { useState, useEffect } from "react";
 import WeatherInfo from "./WeatherInfo";
 import WeatherSearch from "./search";
@@ -15,7 +15,9 @@ const weather = () => {
     try {
       setLoaded(false);
       setCityName(cityname);
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${API_KEY}&units=metric`);
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${API_KEY}&units=metric`
+      );
       if (response.status == 200) {
         const data = await response.json();
         setWeatherData(data);
@@ -40,6 +42,7 @@ const weather = () => {
         <View style={styles.header}>
           <Text style={styles.headerTitle}>ECV Weather app</Text>
         </View>
+        <Image source={{uri:"../assets/loading.gif"}} style={styles.img} />
         <Text style={styles.more}>Loading {cityName}'s data...</Text>
       </View>
     );
@@ -73,12 +76,14 @@ const styles = StyleSheet.create({
   header: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#85aff9",
-    height: 80,
+    backgroundColor: "#FFD5D2",
+    height: 100,
   },
   headerTitle: {
+    marginTop: 35,
     fontSize: 29,
     fontWeight: "bold",
+    color: "white"
   },
   more: {
     textAlign: "center",
@@ -86,4 +91,10 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
   },
+  img: {
+    width: 200,
+    height: 400,
+    justifyContent: "center",
+    alignItems: "center",
+  }
 });

@@ -1,5 +1,5 @@
-import { StyleSheet, View } from 'react-native';
-import Weather from './src'
+import { StyleSheet, View } from "react-native";
+import Weather from "./src";
 
 export default function App() {
   return (
@@ -11,6 +11,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#FFD5D2",
     flex: 1,
   },
 });
