@@ -53,7 +53,7 @@ const Weather = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <View>
       <WeatherSearch fetchWeatherData={fetchWeather} />
       <WeatherInfo weatherData={weatherData} />
     </View>
@@ -63,18 +63,6 @@ const Weather = () => {
 export default Weather;
 
 const styles = StyleSheet.create({
-  header: {
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#FFD5D2",
-    height: 100,
-  },
-  headerTitle: {
-    marginTop: 35,
-    fontSize: 29,
-    fontWeight: "bold",
-    color: "white"
-  },
   more: {
     textAlign: "center",
     marginTop: 50,

@@ -10,7 +10,7 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <View style={styles.container}>
-      <NavigationContainer>
+      <NavigationContainer >
         <Tab.Navigator >
           <Tab.Screen name="ECV Weather APP" component={Weather} />
           <Tab.Screen name="Favorites" component={Favorites} />
@@ -24,11 +24,5 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFD5D2",
     flex: 1,
-  },
-  header: {
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#FFD5D2",
-    height: 100,
   },
 });
