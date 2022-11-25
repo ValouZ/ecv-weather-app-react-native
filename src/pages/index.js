@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet, Alert, Image } from "react-native";
 import React, { useState, useEffect } from "react";
-import WeatherInfo from "./WeatherInfo";
-import WeatherSearch from "./search";
+import WeatherInfo from "../WeatherInfo";
+import WeatherSearch from "../search";
 
 const API_KEY = "cdbc0f1323ad7ab8d46eeb3d29215fe1";
 
-const weather = () => {
+const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [cityName, setCityName] = useState("Paris");
@@ -60,19 +60,18 @@ const weather = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>ECV Weather app</Text>
-      </View>
       <WeatherSearch fetchWeatherData={fetchWeather} />
       <WeatherInfo weatherData={weatherData} />
     </View>
   );
 };
 
-export default weather;
+export default Weather;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    backgroundColor: "#FFD5D2",
+  },
   header: {
     alignItems: "center",
     justifyContent: "center",
