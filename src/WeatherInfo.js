@@ -1,4 +1,11 @@
-import { View, Text, SafeAreaView, StyleSheet, Image, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  Image,
+  Dimensions,
+} from "react-native";
 import React from "react";
 // import WeatherSearch from "./search";
 
@@ -22,7 +29,10 @@ const WeatherInfo = ({ weatherData }) => {
         <Text style={styles.title}>{name}</Text>
       </View>
       <View style={styles.logo}>
-        <Image style={styles.largeIcon} source={{ uri: `https://openweathermap.org/img/wn/${icon}.png` }} />
+        <Image
+          style={styles.largeIcon}
+          source={{ uri: `https://openweathermap.org/img/wn/${icon}.png` }}
+        />
         <Text style={styles.currentTemp}>{Math.round(temp)} °C</Text>
       </View>
       <Text style={styles.description}>{description}</Text>
@@ -48,16 +58,17 @@ const WeatherInfo = ({ weatherData }) => {
       </View>
       <View style={styles.extraInfo}>
         <View style={styles.info}>
-          <Text style={styles.infoTextMain}>{sunriseTemp.toLocaleTimeString()}</Text>
+          <Text style={styles.infoTextMain}>
+            {sunriseTemp.toLocaleTimeString()}
+          </Text>
           <Text style={styles.infoText}>Sunrise</Text>
         </View>
         <View style={styles.info}>
-          <Text style={styles.infoTextMain}>{sunsetTemp.toLocaleTimeString()}</Text>
+          <Text style={styles.infoTextMain}>
+            {sunsetTemp.toLocaleTimeString()}
+          </Text>
           <Text style={styles.infoText}>Sunset</Text>
         </View>
-      </View>
-      <View style={styles.favorite}>
-        <Text>ADD to favorite</Text>
       </View>
     </SafeAreaView>
   );
@@ -117,17 +128,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 24,
     fontWeight: "bold",
-    color: "white"
+    color: "white",
   },
   infoText: {
     textAlign: "center",
     fontSize: 18,
     fontStyle: "italic",
-    color: "white"
-
+    color: "white",
   },
   favorite: {
     marginTop: 16,
-
-  }
+  },
 });

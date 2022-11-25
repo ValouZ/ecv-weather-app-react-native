@@ -13,7 +13,7 @@ export default function App() {
       <NavigationContainer >
         <Tab.Navigator >
           <Tab.Screen name="ECV Weather APP" component={Weather} />
-          <Tab.Screen name="Favorites" component={Favorites} />
+          {/* <Tab.Screen name="Favorites" component={Favorites} /> */}
         </Tab.Navigator>
       </NavigationContainer>
     </View>

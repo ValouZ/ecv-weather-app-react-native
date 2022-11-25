@@ -53,7 +53,7 @@ const Weather = () => {
   }
 
   return (
-    <View>
+    <View  style={styles.container}>
       <WeatherSearch fetchWeatherData={fetchWeather} />
       <WeatherInfo weatherData={weatherData} />
     </View>
