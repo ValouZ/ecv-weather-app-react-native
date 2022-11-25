@@ -39,9 +39,6 @@ const Weather = () => {
   if (!loaded) {
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.headerTitle}>ECV Weather app</Text>
-        </View>
         <Image source={{uri:"../assets/loading.gif"}} style={styles.img} />
         <Text style={styles.more}>Loading {cityName}'s data...</Text>
       </View>
@@ -49,9 +46,6 @@ const Weather = () => {
   } else if (weatherData == null) {
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.headerTitle}>ECV Weather app</Text>
-        </View>
         <WeatherSearch fetchWeatherData={fetchWeather} />
         <Text style={styles.more}> {cityName} not found</Text>
       </View>
@@ -69,9 +63,6 @@ const Weather = () => {
 export default Weather;
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#FFD5D2",
-  },
   header: {
     alignItems: "center",
     justifyContent: "center",
@@ -95,5 +86,8 @@ const styles = StyleSheet.create({
     height: 400,
     justifyContent: "center",
     alignItems: "center",
+  },
+  container: {
+    backgroundColor: "#FFD5D2",
   }
 });

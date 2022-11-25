@@ -56,6 +56,9 @@ const WeatherInfo = ({ weatherData }) => {
           <Text style={styles.infoText}>Sunset</Text>
         </View>
       </View>
+      <View style={styles.favorite}>
+        <Text>ADD to favorite</Text>
+      </View>
     </SafeAreaView>
   );
 };
@@ -65,6 +68,8 @@ export default WeatherInfo;
 const styles = StyleSheet.create({
   container: {
     marginTop: 15,
+    backgroundColor: "#FFD5D2",
+    height: "100%",
   },
   title: {
     width: "100%",
@@ -121,4 +126,8 @@ const styles = StyleSheet.create({
     color: "white"
 
   },
+  favorite: {
+    marginTop: 16,
+
+  }
 });
